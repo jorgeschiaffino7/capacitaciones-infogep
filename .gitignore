@@ -1,0 +1,69 @@
+# Archivos de entorno con credenciales sensibles
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Dependencias
+node_modules/
+**/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Builds y distribución
+dist/
+dist-ssr/
+build/
+*.local
+
+# Archivos de caché
+.cache
+.vite
+.eslintcache
+*.tsbuildinfo
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editores e IDEs
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+
+# Archivos de testing
+coverage/
+.nyc_output/
+
+# Archivos de base de datos locales
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos de certificados y claves privadas
+*.pem
+*.key
+*.cert
+*.crt
