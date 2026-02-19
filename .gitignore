@@ -67,3 +67,6 @@ coverage/
 *.key
 *.cert
 *.crt
+
+# Vercel (cada proyecto back/front tiene su .vercel al hacer vercel link)
+.vercel

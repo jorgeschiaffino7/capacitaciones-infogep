@@ -108,6 +108,45 @@ La aplicación estará disponible en `http://localhost:5173`.
 - Tailwind CSS
 - Axios
 
+## 🌐 Despliegue en Vercel
+
+Backend y frontend se despliegan como **dos proyectos separados** en Vercel.
+
+### Configuración
+
+- **Backend** (`backend/`): tiene `vercel.json` y exporta la app Express para Vercel.
+- **Frontend** (`frontend/`): tiene `vercel.json` para build con Vite; usa la variable de entorno `VITE_API_URL` para la URL del backend.
+
+La carpeta **`.vercel`** no se crea a mano: Vercel la genera al ejecutar `vercel link` en cada carpeta (o al conectar el repo y elegir la raíz del proyecto). Está en `.gitignore`.
+
+### Pasos para desplegar
+
+1. **Backend**
+   - En Vercel: New Project → Importar repo → **Root Directory** = `backend`.
+   - Añadir en Variables de entorno las mismas que en tu `.env` (Google, etc.).
+   - Deploy. Anota la URL (ej. `https://tu-backend.vercel.app`).
+
+2. **Frontend**
+   - En Vercel: New Project → Importar el mismo repo → **Root Directory** = `frontend`.
+   - Añadir variable de entorno: `VITE_API_URL` = URL del backend (ej. `https://tu-backend.vercel.app`).
+   - Deploy.
+
+3. **CORS**: El backend ya usa `cors()`; si restringes orígenes, incluye la URL de producción del frontend.
+
+### Despliegue desde CLI
+
+```bash
+# Backend
+cd backend
+npx vercel
+# (opcional) vercel link para vincular a un proyecto existente
+
+# Frontend (en otra terminal o después)
+cd frontend
+npx vercel
+# Añade VITE_API_URL en el dashboard de Vercel para el proyecto frontend
+```
+
 ## ⚠️ Notas de Seguridad
 
 - **NUNCA** subas el archivo `.env` a Git
