@@ -101,18 +101,18 @@ export default function FormCapacitacion() {
     <div className="min-h-screen py-8 px-4 md:py-12 md:px-6">
       {/* Header */}
       <header className="max-w-5xl mx-auto mb-10 text-center animate-slide-up">
-        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
-          <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
-          <span className="text-white text-sm font-medium tracking-wide">Sistema de Gestión de Capacitaciones</span>
+        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-6">
+          <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+          <span className="text-gray-700 text-sm font-medium tracking-wide">Sistema de Gestión de Capacitaciones</span>
         </div>
         
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
           Solicitud de Capacitación
         </h1>
         
-        <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
           Complete el formulario para gestionar su solicitud. Los campos marcados con 
-          <span className="text-cyan-400 font-semibold"> (*) </span> 
+          <span className="text-blue-600 font-semibold"> (*) </span> 
           son obligatorios.
         </p>
 
@@ -120,10 +120,10 @@ export default function FormCapacitacion() {
         <div className="hidden lg:flex justify-center gap-2 mt-8">
           {sections.map((section) => (
             <div key={section.num} className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-slate-700/50 border border-slate-600/50 flex items-center justify-center text-slate-400 text-sm font-medium hover:border-cyan-500/50 hover:text-cyan-400 transition-all cursor-default">
+              <div className="w-8 h-8 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center text-gray-500 text-sm font-medium hover:border-blue-400 hover:text-blue-600 transition-all cursor-default">
                 {section.num}
               </div>
-              {section.num < 7 && <div className="w-8 h-px bg-slate-700"></div>}
+              {section.num < 7 && <div className="w-8 h-px bg-gray-300"></div>}
             </div>
           ))}
         </div>
@@ -133,16 +133,16 @@ export default function FormCapacitacion() {
       <form onSubmit={handleSubmit} className="max-w-5xl mx-auto space-y-16">
         
         {/* 1. Información General */}
-        <section className="glass-section rounded-2xl p-8 md:p-10 animate-slide-up stagger-1">
-          <div className="mb-8">
-            <h2 className="text-xl md:text-2xl font-bold text-white">Información General</h2>
-            <p className="text-slate-500 text-sm mt-1">Datos básicos de la capacitación</p>
+        <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-1">
+          <div className="mb-10">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Información General</h2>
+            <p className="text-gray-500 text-sm mt-1">Datos básicos de la capacitación</p>
           </div>
           
-          <div className="space-y-7">
+          <div className="space-y-20">
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
-                Título de la capacitación <span className="text-cyan-400">*</span>
+              <label className="block font-medium mb-4 text-gray-700">
+                Título de la capacitación <span className="text-blue-600">*</span>
               </label>
               <input
                 required
@@ -155,10 +155,10 @@ export default function FormCapacitacion() {
             </div>
 
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
-                Tipo de actividad <span className="text-cyan-400">*</span>
+              <label className="block font-medium mb-4 text-gray-700">
+                Tipo de actividad <span className="text-blue-600">*</span>
               </label>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 mt-3">
                 {["Curso", "Taller", "Seminario", "Conferencia"].map(tipo => (
                   <label key={tipo} className="option-card flex items-center gap-3 px-5 py-3 rounded-xl cursor-pointer">
                     <input
@@ -169,7 +169,7 @@ export default function FormCapacitacion() {
                       onChange={handleChange}
                       required
                     />
-                    <span className="font-medium text-slate-300">{tipo}</span>
+                    <span className="font-medium text-gray-700">{tipo}</span>
                   </label>
                 ))}
                 <label className="option-card flex items-center gap-3 px-5 py-3 rounded-xl cursor-pointer">
@@ -180,7 +180,7 @@ export default function FormCapacitacion() {
                     checked={form.tipo === "Otro"}
                     onChange={handleChange}
                   />
-                  <span className="font-medium text-slate-300">Otro</span>
+                  <span className="font-medium text-gray-700">Otro</span>
                 </label>
               </div>
               {form.tipo === "Otro" && (
@@ -195,8 +195,8 @@ export default function FormCapacitacion() {
             </div>
 
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
-                Breve descripción <span className="text-cyan-400">*</span>
+              <label className="block font-medium mb-4 text-gray-700">
+                Breve descripción <span className="text-blue-600">*</span>
               </label>
               <textarea
                 required
@@ -210,8 +210,8 @@ export default function FormCapacitacion() {
             </div>
 
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
-                Objetivo general <span className="text-cyan-400">*</span>
+              <label className="block font-medium mb-4 text-gray-700">
+                Objetivo general <span className="text-blue-600">*</span>
               </label>
               <textarea
                 required
@@ -225,7 +225,7 @@ export default function FormCapacitacion() {
             </div>
 
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
+              <label className="block font-medium mb-4 text-gray-700">
                 Área temática o eje institucional
               </label>
               <input
@@ -240,16 +240,16 @@ export default function FormCapacitacion() {
         </section>
 
         {/* 2. Datos Organizativos */}
-        <section className="glass-section rounded-2xl p-8 md:p-10 animate-slide-up stagger-2">
-          <div className="mb-8">
-            <h2 className="text-xl md:text-2xl font-bold text-white">Datos Organizativos</h2>
-            <p className="text-slate-500 text-sm mt-1">Información del equipo responsable</p>
+        <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-2">
+          <div className="mb-10">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Datos Organizativos</h2>
+            <p className="text-gray-500 text-sm mt-1">Información del equipo responsable</p>
           </div>
           
-          <div className="space-y-7">
+          <div className="space-y-20">
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
-                Organismo o institución organizadora <span className="text-cyan-400">*</span>
+              <label className="block font-medium mb-4 text-gray-700">
+                Organismo o institución organizadora <span className="text-blue-600">*</span>
               </label>
               <input
                 required
@@ -261,9 +261,9 @@ export default function FormCapacitacion() {
               />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label className="block font-medium mb-3 text-slate-300">
+                <label className="block font-medium mb-4 text-gray-700">
                   Equipo o referentes responsables
                 </label>
                 <input
@@ -276,7 +276,7 @@ export default function FormCapacitacion() {
               </div>
 
               <div>
-                <label className="block font-medium mb-3 text-slate-300">
+                <label className="block font-medium mb-4 text-gray-700">
                   Docentes / disertantes / facilitadores
                 </label>
                 <input
@@ -290,8 +290,8 @@ export default function FormCapacitacion() {
             </div>
 
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
-                Contacto institucional <span className="text-cyan-400">*</span>
+              <label className="block font-medium mb-4 text-gray-700">
+                Contacto institucional <span className="text-blue-600">*</span>
               </label>
               <input
                 required
@@ -306,16 +306,16 @@ export default function FormCapacitacion() {
         </section>
 
         {/* 3. Información Logística */}
-        <section className="glass-section rounded-2xl p-8 md:p-10 animate-slide-up stagger-3">
-          <div className="mb-8">
-            <h2 className="text-xl md:text-2xl font-bold text-white">Información Logística</h2>
-            <p className="text-slate-500 text-sm mt-1">Modalidad, fechas y ubicación</p>
+        <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-3">
+          <div className="mb-10">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Información Logística</h2>
+            <p className="text-gray-500 text-sm mt-1">Modalidad, fechas y ubicación</p>
           </div>
           
-          <div className="space-y-7">
+          <div className="space-y-20">
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
-                Modalidad <span className="text-cyan-400">*</span>
+              <label className="block font-medium mb-4 text-gray-700">
+                Modalidad <span className="text-blue-600">*</span>
               </label>
               <div className="grid grid-cols-3 gap-3">
                 {["Presencial", "Virtual", "Híbrida"].map(modalidad => (
@@ -335,7 +335,7 @@ export default function FormCapacitacion() {
                         {modalidad === "Virtual" && "💻"}
                         {modalidad === "Híbrida" && "🔄"}
                       </span>
-                      <span className="font-medium text-slate-300">{modalidad}</span>
+                      <span className="font-medium text-gray-700">{modalidad}</span>
                     </div>
                   </label>
                 ))}
@@ -343,8 +343,8 @@ export default function FormCapacitacion() {
             </div>
 
             {(form.modalidad === "Presencial" || form.modalidad === "Híbrida") && (
-              <div className="p-4 rounded-xl bg-cyan-500/5 border border-cyan-500/20 conditional-section">
-                <label className="block font-medium mb-3 text-slate-300">
+              <div className="p-6 rounded-xl bg-blue-50 border border-blue-200 conditional-section">
+                <label className="block font-medium mb-4 text-gray-700">
                   📍 Lugar
                 </label>
                 <input
@@ -357,10 +357,10 @@ export default function FormCapacitacion() {
               </div>
             )}
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label className="block font-medium mb-3 text-slate-300">
-                  Fecha(s) y horario(s) <span className="text-cyan-400">*</span>
+                <label className="block font-medium mb-4 text-gray-700">
+                  Fecha(s) y horario(s) <span className="text-blue-600">*</span>
                 </label>
                 <input
                   required
@@ -373,7 +373,7 @@ export default function FormCapacitacion() {
               </div>
 
               <div>
-                <label className="block font-medium mb-3 text-slate-300">
+                <label className="block font-medium mb-4 text-gray-700">
                   Duración total (horas)
                 </label>
                 <input
@@ -387,9 +387,9 @@ export default function FormCapacitacion() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label className="block font-medium mb-3 text-slate-300">
+                <label className="block font-medium mb-4 text-gray-700">
                   Cupo máximo de participantes
                 </label>
                 <input
@@ -403,7 +403,7 @@ export default function FormCapacitacion() {
               </div>
 
               <div>
-                <label className="block font-medium mb-3 text-slate-300">
+                <label className="block font-medium mb-4 text-gray-700">
                   Destinatarios
                 </label>
                 <input
@@ -419,15 +419,15 @@ export default function FormCapacitacion() {
         </section>
 
         {/* 4. Comunicación y Difusión */}
-        <section className="glass-section rounded-2xl p-8 md:p-10 animate-slide-up stagger-4">
-          <div className="mb-8">
-            <h2 className="text-xl md:text-2xl font-bold text-white">Comunicación y Difusión</h2>
-            <p className="text-slate-500 text-sm mt-1">Canales y materiales de difusión</p>
+        <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-4">
+          <div className="mb-10">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Comunicación y Difusión</h2>
+            <p className="text-gray-500 text-sm mt-1">Canales y materiales de difusión</p>
           </div>
           
-          <div className="space-y-7">
+          <div className="space-y-20">
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
+              <label className="block font-medium mb-4 text-gray-700">
                 Fecha sugerida para iniciar la difusión
               </label>
               <input
@@ -440,7 +440,7 @@ export default function FormCapacitacion() {
             </div>
 
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
+              <label className="block font-medium mb-4 text-gray-700">
                 Canales solicitados
               </label>
               <div className="grid md:grid-cols-2 gap-3">
@@ -453,7 +453,7 @@ export default function FormCapacitacion() {
                       checked={form.canales.includes(canal)}
                       onChange={handleCheckbox}
                     />
-                    <span className="font-medium text-slate-300">{canal}</span>
+                    <span className="font-medium text-gray-700">{canal}</span>
                   </label>
                 ))}
                 <label className="option-card flex items-center gap-3 p-4 rounded-xl cursor-pointer md:col-span-2">
@@ -464,7 +464,7 @@ export default function FormCapacitacion() {
                     checked={form.canales.includes("Otro")}
                     onChange={handleCheckbox}
                   />
-                  <span className="font-medium text-slate-300">Otro:</span>
+                  <span className="font-medium text-gray-700">Otro:</span>
                   {form.canales.includes("Otro") && (
                     <input
                       name="canalOtro"
@@ -479,7 +479,7 @@ export default function FormCapacitacion() {
             </div>
 
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
+              <label className="block font-medium mb-4 text-gray-700">
                 Logos institucionales para el flyer
               </label>
               <textarea
@@ -492,9 +492,9 @@ export default function FormCapacitacion() {
               />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label className="block font-medium mb-3 text-slate-300">
+                <label className="block font-medium mb-4 text-gray-700">
                   Material gráfico sugerido
                 </label>
                 <textarea
@@ -508,7 +508,7 @@ export default function FormCapacitacion() {
               </div>
 
               <div>
-                <label className="block font-medium mb-3 text-slate-300">
+                <label className="block font-medium mb-4 text-gray-700">
                   Responsable de aprobar el diseño
                 </label>
                 <input
@@ -524,15 +524,15 @@ export default function FormCapacitacion() {
         </section>
 
         {/* 5. Formulario de Inscripción */}
-        <section className="glass-section rounded-2xl p-8 md:p-10 animate-slide-up stagger-5">
-          <div className="mb-8">
-            <h2 className="text-xl md:text-2xl font-bold text-white">Formulario de Inscripción</h2>
-            <p className="text-slate-500 text-sm mt-1">Configuración del registro de participantes</p>
+        <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-5">
+          <div className="mb-10">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Formulario de Inscripción</h2>
+            <p className="text-gray-500 text-sm mt-1">Configuración del registro de participantes</p>
           </div>
           
-          <div className="space-y-7">
+          <div className="space-y-20">
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
+              <label className="block font-medium mb-4 text-gray-700">
                 ¿Requiere formulario de inscripción?
               </label>
               <div className="flex gap-4">
@@ -545,16 +545,16 @@ export default function FormCapacitacion() {
                       checked={form.requiereInscripcion === opcion}
                       onChange={handleChange}
                     />
-                    <span className="font-medium text-slate-300 text-lg">{opcion}</span>
+                    <span className="font-medium text-gray-700 text-lg">{opcion}</span>
                   </label>
                 ))}
               </div>
             </div>
 
             {form.requiereInscripcion === "Sí" && (
-              <div className="p-5 rounded-xl bg-cyan-500/5 border border-cyan-500/20 space-y-5 conditional-section">
+              <div className="p-6 rounded-xl bg-blue-50 border border-blue-200 space-y-8 conditional-section">
                 <div>
-                  <label className="block font-medium mb-3 text-slate-300">
+                  <label className="block font-medium mb-4 text-gray-700">
                     Datos que deben solicitarse al participante
                   </label>
                   <div className="grid md:grid-cols-2 gap-3">
@@ -567,7 +567,7 @@ export default function FormCapacitacion() {
                           checked={form.datosParticipante.includes(dato)}
                           onChange={handleCheckbox}
                         />
-                        <span className="font-medium text-slate-300">{dato}</span>
+                        <span className="font-medium text-gray-700">{dato}</span>
                       </label>
                     ))}
                     <label className="option-card flex items-center gap-3 p-3 rounded-xl cursor-pointer md:col-span-2">
@@ -578,7 +578,7 @@ export default function FormCapacitacion() {
                         checked={form.datosParticipante.includes("Otro")}
                         onChange={handleCheckbox}
                       />
-                      <span className="font-medium text-slate-300">Otro:</span>
+                      <span className="font-medium text-gray-700">Otro:</span>
                       {form.datosParticipante.includes("Otro") && (
                         <input
                           name="datoOtro"
@@ -592,9 +592,9 @@ export default function FormCapacitacion() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-5">
+                <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <label className="block font-medium mb-3 text-slate-300">
+                    <label className="block font-medium mb-4 text-gray-700">
                       Fecha límite de inscripción
                     </label>
                     <input
@@ -607,7 +607,7 @@ export default function FormCapacitacion() {
                   </div>
 
                   <div>
-                    <label className="block font-medium mb-3 text-slate-300">
+                    <label className="block font-medium mb-4 text-gray-700">
                       Link del formulario (si existe)
                     </label>
                     <input
@@ -626,21 +626,21 @@ export default function FormCapacitacion() {
         </section>
 
         {/* 6. Requerimientos Técnicos */}
-        <section className="glass-section rounded-2xl p-8 md:p-10 animate-slide-up stagger-6">
-          <div className="mb-8">
-            <h2 className="text-xl md:text-2xl font-bold text-white">Requerimientos Técnicos</h2>
-            <p className="text-slate-500 text-sm mt-1">Infraestructura y equipamiento necesario</p>
+        <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-6">
+          <div className="mb-10">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Requerimientos Técnicos</h2>
+            <p className="text-gray-500 text-sm mt-1">Infraestructura y equipamiento necesario</p>
           </div>
           
-          <div className="space-y-7">
+          <div className="space-y-20">
             {(form.modalidad === "Presencial" || form.modalidad === "Híbrida") && (
-              <div className="p-5 rounded-xl bg-slate-800/50 border border-slate-700/50 space-y-5 conditional-section">
-                <h3 className="font-bold text-lg text-cyan-400 flex items-center gap-2">
+              <div className="p-6 rounded-xl bg-gray-50 border border-gray-200 space-y-8 conditional-section">
+                <h3 className="font-bold text-lg text-blue-600 flex items-center gap-2">
                   🏛️ Infraestructura Presencial
                 </h3>
                 
                 <div>
-                  <label className="block font-medium mb-3 text-slate-300">
+                  <label className="block font-medium mb-4 text-gray-700">
                     Cantidad de sillas disponibles
                   </label>
                   <input
@@ -661,8 +661,8 @@ export default function FormCapacitacion() {
                     { name: "sonido", label: "Sistema de sonido" },
                     { name: "microfonos", label: "Micrófonos" },
                   ].map(item => (
-                    <div key={item.name} className="p-4 rounded-xl bg-slate-900/50 border border-slate-700/50">
-                      <label className="block font-medium mb-3 text-slate-400 text-sm">
+                    <div key={item.name} className="p-4 rounded-xl bg-gray-100 border border-gray-200">
+                      <label className="block font-medium mb-4 text-gray-500 text-sm">
                         {item.label}
                       </label>
                       <div className="flex gap-3">
@@ -675,7 +675,7 @@ export default function FormCapacitacion() {
                               checked={form[item.name] === opcion}
                               onChange={handleChange}
                             />
-                            <span className="text-slate-300 text-sm">{opcion}</span>
+                            <span className="text-gray-700 text-sm">{opcion}</span>
                           </label>
                         ))}
                       </div>
@@ -686,7 +686,7 @@ export default function FormCapacitacion() {
             )}
 
             <div>
-              <label className="block font-medium mb-3 text-slate-300">
+              <label className="block font-medium mb-4 text-gray-700">
                 Otros requerimientos técnicos
               </label>
               <div className="grid md:grid-cols-2 gap-3">
@@ -706,20 +706,20 @@ export default function FormCapacitacion() {
                       checked={form.requerimientosTecnicos.includes(req)}
                       onChange={handleCheckbox}
                     />
-                    <span className="font-medium text-slate-300 text-sm">{req}</span>
+                    <span className="font-medium text-gray-700 text-sm">{req}</span>
                   </label>
                 ))}
               </div>
             </div>
 
             {(form.modalidad === "Virtual" || form.modalidad === "Híbrida") && (
-              <div className="p-5 rounded-xl bg-slate-800/50 border border-slate-700/50 space-y-5 conditional-section">
-                <h3 className="font-bold text-lg text-cyan-400 flex items-center gap-2">
+              <div className="p-6 rounded-xl bg-gray-50 border border-gray-200 space-y-8 conditional-section">
+                <h3 className="font-bold text-lg text-blue-600 flex items-center gap-2">
                   💻 Modalidad Virtual
                 </h3>
                 
                 <div>
-                  <label className="block font-medium mb-3 text-slate-300">
+                  <label className="block font-medium mb-4 text-gray-700">
                     Plataforma utilizada
                   </label>
                   <input
@@ -738,8 +738,8 @@ export default function FormCapacitacion() {
                     { name: "grabacion", label: "Grabación/transmisión" },
                     { name: "soporteTecnico", label: "Soporte técnico" },
                   ].map(item => (
-                    <div key={item.name} className="p-4 rounded-xl bg-slate-900/50 border border-slate-700/50">
-                      <label className="block font-medium mb-3 text-slate-400 text-sm">
+                    <div key={item.name} className="p-4 rounded-xl bg-gray-100 border border-gray-200">
+                      <label className="block font-medium mb-4 text-gray-500 text-sm">
                         {item.label}
                       </label>
                       <div className="flex gap-3">
@@ -752,7 +752,7 @@ export default function FormCapacitacion() {
                               checked={form[item.name] === opcion}
                               onChange={handleChange}
                             />
-                            <span className="text-slate-300 text-sm">{opcion}</span>
+                            <span className="text-gray-700 text-sm">{opcion}</span>
                           </label>
                         ))}
                       </div>
@@ -765,15 +765,15 @@ export default function FormCapacitacion() {
         </section>
 
         {/* 7. Observaciones Adicionales */}
-        <section className="glass-section rounded-2xl p-8 md:p-10 animate-slide-up stagger-7">
-          <div className="mb-8">
-            <h2 className="text-xl md:text-2xl font-bold text-white">Observaciones Adicionales</h2>
-            <p className="text-slate-500 text-sm mt-1">Comentarios o información extra</p>
+        <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-7">
+          <div className="mb-10">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900">Observaciones Adicionales</h2>
+            <p className="text-gray-500 text-sm mt-1">Comentarios o información extra</p>
           </div>
           
           <div>
-            <label className="block font-medium mb-3 text-slate-300">
-              Comentarios u observaciones <span className="text-slate-500 text-sm">(opcional)</span>
+            <label className="block font-medium mb-4 text-gray-700">
+              Comentarios u observaciones <span className="text-gray-500 text-sm">(opcional)</span>
             </label>
             <textarea
               name="observaciones"
@@ -791,7 +791,7 @@ export default function FormCapacitacion() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="submit-btn text-white font-semibold px-8 py-3 rounded-xl text-base shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            className="submit-btn text-gray-900 font-semibold px-8 py-3 rounded-xl text-base shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center gap-3">
@@ -810,15 +810,15 @@ export default function FormCapacitacion() {
               </span>
             )}
           </button>
-          <p className="text-sm text-white text-center">
+          <p className="text-sm text-gray-900 text-center">
             Al enviar, los datos se guardarán en la planilla institucional
           </p>
         </div>
       </form>
 
       {/* Footer decoration */}
-      <div className="max-w-5xl mx-auto mt-8 pt-8 border-t border-slate-800/50 text-center">
-        <p className="text-white text-sm">
+      <div className="max-w-5xl mx-auto mt-8 pt-8 border-t border-gray-200 text-center">
+        <p className="text-gray-900 text-sm">
           Sistema de Gestión de Capacitaciones • InfoGEP
         </p>
       </div>

@@ -8,42 +8,21 @@
 
 /* Force header text colors */
 header h1 {
-  color: #ffffff !important;
+  color: #1a1a1a !important;
 }
 
 header p {
-  color: #ffffff !important;
+  color: #4a4a4a !important;
 }
 
 header span {
-  color: #ffffff !important;
+  color: #2d2d2d !important;
 }
 
 body {
   font-family: 'Outfit', sans-serif;
   min-height: 100vh;
-  background: #0f172a;
-  background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.15), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(99, 102, 241, 0.1), transparent),
-    radial-gradient(ellipse 50% 30% at 0% 80%, rgba(6, 182, 212, 0.08), transparent);
-  background-attachment: fixed;
-}
-
-/* Grid pattern overlay */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: 0;
+  background: #f5f5f5;
 }
 
 #root {
@@ -51,66 +30,60 @@ body::before {
   z-index: 1;
 }
 
-/* Estilos glassmorphism para formulario */
+/* Estilos para formulario corporativo */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .glass-section {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
 }
 
 .glass-section:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(6, 182, 212, 0.3);
-  box-shadow: 
-    0 0 40px rgba(6, 182, 212, 0.08),
-    0 20px 40px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2px);
+  border-color: #d0d0d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Input styling */
 .input-field {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  color: #1a1a1a;
   transition: all 0.3s ease;
 }
 
 .input-field::placeholder {
-  color: rgba(148, 163, 184, 0.6);
+  color: #9e9e9e;
 }
 
 .input-field:focus {
   outline: none;
-  border-color: #06b6d4;
-  box-shadow: 
-    0 0 0 3px rgba(6, 182, 212, 0.15),
-    0 0 20px rgba(6, 182, 212, 0.1);
-  background: rgba(15, 23, 42, 0.8);
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: #ffffff;
 }
 
 /* Radio & Checkbox containers */
 .option-card {
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
   transition: all 0.3s ease;
 }
 
 .option-card:hover {
-  background: rgba(6, 182, 212, 0.1);
-  border-color: rgba(6, 182, 212, 0.3);
+  background: #f0f7ff;
+  border-color: #93c5fd;
 }
 
 .option-card:has(input:checked) {
-  background: rgba(6, 182, 212, 0.15);
-  border-color: #06b6d4;
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+  background: #eff6ff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.1);
 }
 
 /* Custom checkbox/radio */
@@ -119,8 +92,8 @@ input[type="radio"] {
   appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid rgba(148, 163, 184, 0.4);
-  background: rgba(15, 23, 42, 0.6);
+  border: 2px solid #d0d0d0;
+  background: #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
@@ -136,9 +109,8 @@ input[type="radio"] {
 
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-  background: #06b6d4;
-  border-color: #06b6d4;
-  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
 input[type="checkbox"]:checked::after {
@@ -146,7 +118,7 @@ input[type="checkbox"]:checked::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0f172a;
+  color: #ffffff;
   font-size: 12px;
   font-weight: 700;
   height: 100%;
@@ -157,7 +129,7 @@ input[type="radio"]:checked::after {
   display: block;
   width: 8px;
   height: 8px;
-  background: #0f172a;
+  background: #ffffff;
   border-radius: 50%;
   margin: 4px;
 }
@@ -168,32 +140,13 @@ input[type="radio"]:checked::after {
 }
 
 .progress-step.active {
-  background: linear-gradient(135deg, #06b6d4, #0891b2);
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  background: #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 .progress-step.completed {
-  background: #10b981;
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
-}
-
-/* Animations */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(6, 182, 212, 0.5); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: glow 3s ease-in-out infinite;
+  background: #16a34a;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.2);
 }
 
 /* Staggered animations for sections */
@@ -207,75 +160,54 @@ input[type="radio"]:checked::after {
 
 /* Submit button */
 .submit-btn {
-  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);
+  background: #2563eb;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.submit-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.submit-btn:hover::before {
-  left: 100%;
+  transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 
-    0 10px 40px rgba(6, 182, 212, 0.4),
-    0 0 60px rgba(6, 182, 212, 0.2);
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .submit-btn:active {
-  transform: translateY(-1px);
+  transform: translateY(0);
 }
 
 /* Section number badge */
 .section-badge {
-  background: linear-gradient(135deg, #06b6d4, #0891b2);
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
-  color: #0f172a;
+  background: #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+  color: #ffffff;
 }
 
-/* Force white text on headings */
+/* Text colors for light theme */
 .glass-section h2 {
-  color: #ffffff !important;
+  color: #1a1a1a !important;
 }
 
 .glass-section h3 {
-  color: #22d3ee !important;
+  color: #2563eb !important;
 }
 
 .glass-section label {
-  color: #cbd5e1;
+  color: #2d2d2d;
 }
 
 .glass-section p {
-  color: #64748b;
+  color: #6b7280;
 }
 
 /* Footer text */
 form + div p {
-  color: #ffffff !important;
+  color: #6b7280 !important;
 }
 
 /* Form submit area text */
 form p {
-  color: #ffffff !important;
+  color: #4a4a4a !important;
 }
 
 /* Scrollbar */
@@ -284,16 +216,16 @@ form p {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
+  background: #f0f0f0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #06b6d4, #0891b2);
+  background: #c0c0c0;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #22d3ee, #06b6d4);
+  background: #a0a0a0;
 }
 
 /* Responsive adjustments */
@@ -306,4 +238,9 @@ form p {
 /* Conditional sections animation */
 .conditional-section {
   animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Force vertical spacing between form fields */
+.space-y-20 > * + * {
+  margin-top: 2rem !important;
 }
