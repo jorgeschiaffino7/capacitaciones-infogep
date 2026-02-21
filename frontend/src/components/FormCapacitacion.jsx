@@ -98,9 +98,9 @@ export default function FormCapacitacion() {
   ];
 
   return (
-    <div className="min-h-screen py-8 px-4 md:py-12 md:px-6">
+    <div className="min-h-screen py-8 px-4 md:py-12 md:px-6 flex flex-col items-center">
       {/* Header */}
-      <header className="max-w-5xl mx-auto mb-10 text-center animate-slide-up">
+      <header className="max-w-2xl w-full mx-auto mb-10 text-center animate-slide-up">
         <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-6">
           <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
           <span className="text-gray-700 text-sm font-medium tracking-wide">Sistema de Gestión de Capacitaciones</span>
@@ -130,7 +130,7 @@ export default function FormCapacitacion() {
       </header>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="max-w-5xl mx-auto space-y-16">
+      <form onSubmit={handleSubmit} className="max-w-2xl w-full mx-auto space-y-12">
         
         {/* 1. Información General */}
         <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-1">
@@ -817,7 +817,7 @@ export default function FormCapacitacion() {
       </form>
 
       {/* Footer decoration */}
-      <div className="max-w-5xl mx-auto mt-8 pt-8 border-t border-gray-200 text-center">
+      <div className="max-w-2xl w-full mx-auto mt-8 pt-8 border-t border-gray-200 text-center">
         <p className="text-gray-900 text-sm">
           Sistema de Gestión de Capacitaciones • InfoGEP
         </p>

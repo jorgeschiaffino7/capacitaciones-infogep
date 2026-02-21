@@ -242,5 +242,10 @@ form p {
 
 /* Force vertical spacing between form fields */
 .space-y-20 > * + * {
-  margin-top: 2rem !important;
+  margin-top: 2.5rem !important;
+}
+
+/* Spacing for grid fields */
+.grid.gap-8 {
+  gap: 2.5rem !important;
 }
