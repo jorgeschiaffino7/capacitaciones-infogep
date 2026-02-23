@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { submitForm } from "../services/api";
+import logo from "../assets/LOGO.png";
 
 export default function FormCapacitacion() {
   const [form, setForm] = useState({
@@ -99,38 +100,49 @@ export default function FormCapacitacion() {
 
   return (
     <div className="min-h-screen py-8 px-4 md:py-12 md:px-6 flex flex-col items-center">
-      {/* Header */}
-      <header className="max-w-2xl w-full mx-auto mb-10 text-center animate-slide-up">
-        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-6">
-          <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-          <span className="text-gray-700 text-sm font-medium tracking-wide">Sistema de Gestión de Capacitaciones</span>
+      {/* Header con Logo */}
+      <header className="max-w-xl w-full mx-auto mb-10 animate-slide-up">
+        {/* Logo Container */}
+        <div className="flex justify-center mb-6">
+          <img 
+            src={logo} 
+            alt="Logo Institucional" 
+            className="h-16 md:h-20 w-auto object-contain max-w-[280px] md:max-w-[320px]"
+          />
         </div>
-        
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
-          Solicitud de Capacitación
-        </h1>
-        
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-          Complete el formulario para gestionar su solicitud. Los campos marcados con 
-          <span className="text-blue-600 font-semibold"> (*) </span> 
-          son obligatorios.
-        </p>
 
-        {/* Progress indicator */}
-        <div className="hidden lg:flex justify-center gap-2 mt-8">
-          {sections.map((section) => (
-            <div key={section.num} className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center text-gray-500 text-sm font-medium hover:border-blue-400 hover:text-blue-600 transition-all cursor-default">
-                {section.num}
+        <div className="text-center">
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 mb-6">
+            <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+            <span className="text-gray-700 text-sm font-medium tracking-wide">Sistema de Gestión de Capacitaciones</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
+            Solicitud de Capacitación
+          </h1>
+          
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+            Complete el formulario para gestionar su solicitud. Los campos marcados con 
+            <span className="text-blue-600 font-semibold"> (*) </span> 
+            son obligatorios.
+          </p>
+
+          {/* Progress indicator */}
+          <div className="hidden lg:flex justify-center gap-2 mt-8">
+            {sections.map((section) => (
+              <div key={section.num} className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center text-gray-500 text-sm font-medium hover:border-blue-400 hover:text-blue-600 transition-all cursor-default">
+                  {section.num}
+                </div>
+                {section.num < 7 && <div className="w-8 h-px bg-gray-300"></div>}
               </div>
-              {section.num < 7 && <div className="w-8 h-px bg-gray-300"></div>}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </header>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="max-w-2xl w-full mx-auto space-y-12">
+      <form onSubmit={handleSubmit} className="max-w-xl w-full mx-auto space-y-12">
         
         {/* 1. Información General */}
         <section className="glass-section rounded-2xl p-10 md:p-12 animate-slide-up stagger-1">
@@ -817,7 +829,7 @@ export default function FormCapacitacion() {
       </form>
 
       {/* Footer decoration */}
-      <div className="max-w-2xl w-full mx-auto mt-8 pt-8 border-t border-gray-200 text-center">
+      <div className="max-w-xl w-full mx-auto mt-8 pt-8 border-t border-gray-200 text-center">
         <p className="text-gray-900 text-sm">
           Sistema de Gestión de Capacitaciones • InfoGEP
         </p>
